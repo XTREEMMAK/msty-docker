@@ -41,3 +41,7 @@ It takes a little time to pull the image from the repo so it may not show up imm
 ## Persistent Storage
 Msty stores its database within the `/tmp/` folder which if you destroy the container, you destroy the settings. To prevent this, I've mounted that directory within the config folder. 
 If you want to remove persistence, simply remove the second volume mount.
+
+## Tips and Notice
+- Please do NOT publish this to the public web unless you have something in front of it (such as [Authentik](https://goauthentik.io/)) for authentication and SSO.
+- If you do build this yourself, make sure to download the startup.sh as well as it's needed.
