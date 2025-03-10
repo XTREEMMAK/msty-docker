@@ -30,5 +30,11 @@ services:
     shm_size: "1gb"
     restart: unless-stopped
 ```
+Simply create a directory, create a compose file, and `docker compose up -d`
+
+## First Run
+Please give it time to start. It takes a little time to pull the image from the repo so it may not show up immediately once you start the compose.
+
 ## Persistent Storage
-Msty stores its database within the /tmp/ folder which if you destroy the container, you destroy the settings. To prevent this, I've mounted that directory within the config folder. If you want to remove persistence, just remove the second volume mount.
+Msty stores its database within the /tmp/ folder which if you destroy the container, you destroy the settings. To prevent this, I've mounted that directory within the config folder. 
+If you want to remove persistence, just remove the second volume mount.
