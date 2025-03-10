@@ -1,9 +1,11 @@
-# msty-docker
+# Msty-docker
 This project is heavily based on the work of [linuxserver/obsidian](https://hub.docker.com/r/linuxserver/obsidian) which was used as a reference. For additional customizations, please refer to their project.
 
-I had originally created this out of curiosity having examined how the Obsidian project was implementing Kasm, so I thought to try the same approach with Msty which currently does not have an official Docker release, but DOES have an official Linux release. I also managed to get persistent storage working for the application as well.
+## About this Project
+I originally created this out of curiosity after examining how the Obsidian project implemented [Kasm](https://kasmweb.com/). 
+I thought I'd try the same approach with Msty, which currently doesn't have an official Docker release, but *DOES* have an official Linux release. I also managed to get persistent storage working for this application as well.
 
-I'm not a seasoned Docker developer so any feedback or improvements to this would be appreciated. If anything, thank you for checking this out and if anything, hopefully it helps someone ^_^.
+I'm not a seasoned Docker developer, so any feedback or improvements to this would be appreciated. Regardless, thank you for checking this out and hopefully, it helps someone ^_^.
 
 ## Usage
 You can build the image yourself using the Dockerfile here, or use the Docker Compose:
@@ -30,11 +32,12 @@ services:
     shm_size: "1gb"
     restart: unless-stopped
 ```
-Simply create a directory, create a compose file, and `docker compose up -d`
+Simply create a directory, create a compose file, and `sudo docker compose up -d`
 
 ## First Run
-Please give it time to start. It takes a little time to pull the image from the repo so it may not show up immediately once you start the compose.
+Please give it time to start. 
+It takes a little time to pull the image from the repo so it may not show up immediately once you start the compose.
 
 ## Persistent Storage
-Msty stores its database within the /tmp/ folder which if you destroy the container, you destroy the settings. To prevent this, I've mounted that directory within the config folder. 
-If you want to remove persistence, just remove the second volume mount.
+Msty stores its database within the `/tmp/` folder which if you destroy the container, you destroy the settings. To prevent this, I've mounted that directory within the config folder. 
+If you want to remove persistence, simply remove the second volume mount.
