@@ -1,0 +1,21 @@
+---
+services:
+   msty:
+    image: ghcr.io/xtreemmak/msty-docker:latest
+    container_name: msty
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/config
+      - ./config/msty-settings:/tmp/.config/Msty
+    ports:
+      - 3733:3000
+      - 3734:3001
+    devices:
+      - /dev/dri:/dev/dri #optional
+    shm_size: "1gb"
+    restart: unless-stopped
